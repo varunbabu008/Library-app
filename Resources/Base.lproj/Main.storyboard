@@ -44,6 +44,9 @@
                                 <rect key="frame" x="162" y="391" width="50" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dei-Cq-9cs"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFK-UU-fSW">
                                 <rect key="frame" x="179" y="435" width="16" height="21"/>
@@ -55,6 +58,9 @@
                                 <rect key="frame" x="152" y="471" width="71" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ivi-QK-nJ2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,6 +81,12 @@
                             <constraint firstItem="y3e-FR-Ubf" firstAttribute="top" secondItem="5EJ-EU-bBO" secondAttribute="bottom" constant="43" id="zgb-E3-MQf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="y3e-FR-Ubf" id="WQe-Lj-6lV"/>
+                        <outlet property="passWordTextField" destination="5EJ-EU-bBO" id="6DI-vv-FPU"/>
+                        <outlet property="signUpButton" destination="pMs-I5-tIf" id="9Bo-3t-OKA"/>
+                        <outlet property="userNameTextField" destination="tTh-aH-5th" id="sk5-OQ-D7m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
