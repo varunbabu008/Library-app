@@ -86,12 +86,60 @@
                         <outlet property="passWordTextField" destination="5EJ-EU-bBO" id="6DI-vv-FPU"/>
                         <outlet property="signUpButton" destination="pMs-I5-tIf" id="9Bo-3t-OKA"/>
                         <outlet property="userNameTextField" destination="tTh-aH-5th" id="sk5-OQ-D7m"/>
-                        <segue destination="Nl8-Gp-Pcq" kind="show" identifier="booksPage" id="Bl9-X2-vKv"/>
+                        <segue destination="f3x-Rv-tXb" kind="show" identifier="booksPage" id="jBe-uh-hd6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-166" y="-16"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="1d7-P0-Pao">
+            <objects>
+                <tableViewController id="Gf6-68-wqW" customClass="BooksViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cvt-qI-S9h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="qEF-fQ-aVR">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qEF-fQ-aVR" id="l2e-Pu-Bjn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="LJd-tQ-k4y" kind="show" identifier="bookDetails" id="mNB-8k-gus"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Gf6-68-wqW" id="amD-C4-fWu"/>
+                            <outlet property="delegate" destination="Gf6-68-wqW" id="SFh-Tc-cZD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="VW7-AB-wpy"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tkc-OS-X20" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1425" y="387"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VKh-Id-YnJ">
+            <objects>
+                <navigationController id="f3x-Rv-tXb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RBr-oS-UU5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Gf6-68-wqW" kind="relationship" relationship="rootViewController" id="3cb-xG-1Yo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rAf-Ce-zVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="644" y="378"/>
         </scene>
         <!--Books View Controller-->
         <scene sceneID="HFs-3l-EZ0">
@@ -133,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ete-Qb-uHF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="673" y="563"/>
+            <point key="canvasLocation" x="1106" y="1039"/>
         </scene>
         <!--Books View Controller-->
         <scene sceneID="VgZ-Su-Qhn">
@@ -151,9 +199,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="LJd-tQ-k4y" kind="show" identifier="bookDetails" id="DtI-TW-T9B"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -273,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eiP-NK-DDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845.5999999999999" y="84.107946026986511"/>
+            <point key="canvasLocation" x="2102" y="-52"/>
         </scene>
     </scenes>
 </document>
