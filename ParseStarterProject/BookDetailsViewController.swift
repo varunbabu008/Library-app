@@ -12,7 +12,7 @@ import Parse
 class BookDetailsViewController: UIViewController {
     var Booktitle = ""
     
-    //var item = PFObject()
+    var item: PFObject?
     
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var ISBNTextField: UITextField!
@@ -24,7 +24,18 @@ class BookDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        titleTextField.text = Booktitle
+        //titleTextField.text = Booktitle
+        
+//        if let topItem = self.navigationController?.navigationBar.topItem{
+//            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+//        }
+        
+        
+        titleTextField.text = item?["Title"] as! String
+        ISBNTextField.text = item?["ISBN"] as! String
+        authorTextField.text = item?["Author"] as! String
+        genreTextField.text = item?["Genre"] as! String
+        locationTextField.text = item?["Location"] as! String
         
     }
 

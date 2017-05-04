@@ -12,7 +12,8 @@ import Parse
 class BooksViewController: UITableViewController{
     
     
-     var requestBooks = [String]()
+    var requestBooks = [String]()
+    var bookObjects = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,7 @@ class BooksViewController: UITableViewController{
                         
                         
                         self.requestBooks.append(bookTitle)
+                        self.bookObjects.append(book)
                         
                         
                     }
@@ -81,10 +83,10 @@ class BooksViewController: UITableViewController{
                 
                 if let row = tableView.indexPathForSelectedRow?.row{
                     
-                    destination.Booktitle = requestBooks[row]
+                    //destination.Booktitle = requestBooks[row]
                     
-                    //destination.item =
-                    
+                    destination.item = bookObjects[row]
+                                        
                     
                 }
             }
