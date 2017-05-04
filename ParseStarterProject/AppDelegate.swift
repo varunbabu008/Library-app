@@ -11,6 +11,13 @@ import UIKit
 
 import Parse
 
+import ParseFacebookUtilsV4
+
+
+
+
+
+
 // If you want to use any of the UI components, uncomment this line
 // import ParseUI
 
@@ -49,6 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         //PFUser.enableAutomaticUser()
 
+        PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
+        
         let defaultACL = PFACL();
 
         // If you would like all objects to be private by default, remove this line.
@@ -73,7 +82,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  */
         }
 
-        return true
+        //
+        //  Swift 1.2
+        //
+        //        if application.respondsToSelector("registerUserNotificationSettings:") {
+        //            let userNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
+        //            let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+        //            application.registerUserNotificationSettings(settings)
+        //            application.registerForRemoteNotifications()
+        //        } else {
+        //            let types = UIRemoteNotificationType.Badge | UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound
+        //            application.registerForRemoteNotificationTypes(types)
+        //        }
+
+        //
+        //  Swift 2.0
+        //
+        //        if #available(iOS 8.0, *) {
+        //            let types: UIUserNotificationType = [.Alert, .Badge, .Sound]
+        //            let settings = UIUserNotificationSettings(forTypes: types, categories: nil)
+        //            application.registerUserNotificationSettings(settings)
+        //            application.registerForRemoteNotifications()
+        //        } else {
+        //            let types: UIRemoteNotificationType = [.Alert, .Badge, .Sound]
+        //            application.registerForRemoteNotificationTypes(types)
+        //        }
+
+        return FBSDKApplicationDelegate.sharedInstance().application(application,didFinishLaunchingWithOptions:launchOptions)
     }
 
     //--------------------------------------
@@ -82,8 +117,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let installation = PFInstallation.current()
-        installation.setDeviceTokenFrom(deviceToken)
-        installation.saveInBackground()
+        installation?.setDeviceTokenFrom(deviceToken)
+        installation?.saveInBackground()
 
         PFPush.subscribeToChannel(inBackground: "") { (succeeded, error) in // (succeeded: Bool, error: NSError?) is now (succeeded, error)
 
@@ -109,6 +144,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             PFAnalytics.trackAppOpened(withRemoteNotificationPayload: userInfo)
         }
     }
+    
+    
+    //Added by VB
+    
+    func application(application:UIApplication,openURL url: NSURL,sourceApplication:String?,
+        annotation:AnyObject) ->Bool{
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(application,open: url as URL!, sourceApplication: sourceApplication,annotation: annotation)
+        
+    }
+    
+//    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+//        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+//    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        FBSDKAppEvents.activateApp()
+    }
+    
+    
+    
+    
 
     ///////////////////////////////////////////////////////////
     // Uncomment this method if you want to use Push Notifications with Background App Refresh
@@ -129,4 +186,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
     //     return FBAppCall.handleOpenURL(url, sourceApplication:sourceApplication, session:PFFacebookUtils.session())
     // }
+    
+    
+    
 }
