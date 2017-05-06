@@ -9,21 +9,63 @@
 import UIKit
 import Parse
 
-class BooksViewController: UITableViewController{
+class BooksViewController: UITableViewController,UISearchBarDelegate{
     
+    @IBOutlet var searchBar: UISearchBar!
     
-    var requestBooks = [String]()
+    //var requestBooks = [String]()
     var bookObjects = [PFObject]()
+    
+    var filteredBooks = [PFObject]()
+    var searchActive:Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        searchBar.delegate = self
         getBooks()
+        
+        search()
         
 
         // Do any additional setup after loading the view.
     }
+    
+    func search(searchText:String? = nil){
+        
+        let query = PFQuery(className: "Books")
+        if(searchText != nil){
+            query.whereKey("Title", contains: searchText)
+            
+        }
+        query.findObjectsInBackground { (results, error) in
+            //self.filteredBooks = (results)!
+            
+            self.bookObjects = (results)!
+            self.tableView.reloadData()
+        }
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        search(searchText:searchText)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,14 +93,15 @@ class BooksViewController: UITableViewController{
             
             if let books = objects{
                 
-                self.requestBooks.removeAll()
+                //self.requestBooks.removeAll()
+                self.bookObjects.removeAll()
                 
                 for book in books{
                     
                     if let bookTitle = book["Title"] as? String{
                         
                         
-                        self.requestBooks.append(bookTitle)
+                        //self.requestBooks.append(bookTitle)
                         self.bookObjects.append(book)
                         
                         
@@ -86,6 +129,7 @@ class BooksViewController: UITableViewController{
                     //destination.Booktitle = requestBooks[row]
                     
                     destination.item = bookObjects[row]
+                    destination.navigationItem.title = "Book Details"
                                         
                     
                 }
@@ -105,14 +149,19 @@ class BooksViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return requestBooks.count
+        return bookObjects.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = requestBooks[indexPath.row]
+        //cell.textLabel?.text = requestBooks[indexPath.row]
+        
+            
+        cell.textLabel?.text = bookObjects[indexPath.row]["Title"] as? String
+            
+        
         
         return cell
     
