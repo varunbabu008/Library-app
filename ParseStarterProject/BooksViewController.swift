@@ -16,26 +16,35 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
     //var requestBooks = [String]()
     var bookObjects = [PFObject]()
     
-    var filteredBooks = [PFObject]()
+    //var filteredBooks = [PFObject]()
     var searchActive:Bool = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        search()
         getBooks()
         
-        search()
+        
         
 
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getBooks()
+
+    }
+    
     func search(searchText:String? = nil){
         
         let query = PFQuery(className: "Books")
+        
+        //could implment a quantity for books instead of multiple entries
         if(searchText != nil){
             query.whereKey("Title", contains: searchText)
+            query.whereKey("isRented", equalTo: false)
             
         }
         query.findObjectsInBackground { (results, error) in
@@ -59,12 +68,14 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
         searchActive = false
     }
     
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         search(searchText:searchText)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -82,6 +93,8 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
         // Pass the selected object to the new view controller.
     }
     */
+    
+
     
     func getBooks(){
         
@@ -102,7 +115,10 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
                         
                         
                         //self.requestBooks.append(bookTitle)
-                        self.bookObjects.append(book)
+                        if (book["isRented"] as! Bool == false) {
+                            self.bookObjects.append(book)
+                        }
+                        
                         
                         
                     }

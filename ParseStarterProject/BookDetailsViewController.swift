@@ -19,6 +19,41 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet var authorTextField: UITextField!
     @IBOutlet var genreTextField: UITextField!
     @IBOutlet var locationTextField: UITextField!
+    @IBAction func placeOnHold(_ sender: Any) {
+        
+        
+        let query = PFQuery(className: "Books")
+        
+        query.whereKey("ISBN", equalTo: ISBNTextField.text)
+        
+        query.findObjectsInBackground { (results, error) in
+            
+            if let books  = results{
+                
+                for book in books{
+                    
+                    book["isRented"] = true as Bool
+                    book.saveInBackground()
+                }
+                
+                
+            }
+            
+        }
+        
+        //adding an entry to borrowers class
+        
+        //let query1 = PFQuery(className: "Borrowers")
+        var currentUser = PFUser.current()!.username
+        //var username = currentUser?.username
+        var borrow = PFObject(className:"Borrowers")
+        borrow["Username"] = currentUser
+        borrow["ISBN"] = ISBNTextField.text
+        borrow.saveInBackground()
+        
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +73,7 @@ class BookDetailsViewController: UIViewController {
         locationTextField.text = item?["Location"] as! String
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

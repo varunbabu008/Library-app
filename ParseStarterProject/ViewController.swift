@@ -134,30 +134,58 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let permissions = ["public_profile"]
-        PFFacebookUtils.logInInBackground(withReadPermissions: permissions) { (user, error) in
-            
-            if let error = error{
-                
-                print(error)
-                
-            }
-            
-            else{
-                
-                if let user = user{
-                    
-                    print(user)
-                    
-                }
-                
-                
-            }
-            
-            
-        }
+//        let permissions = ["public_profile"]
+//        PFFacebookUtils.logInInBackground(withReadPermissions: permissions) { (user, error) in
+//            
+//            if let error = error{
+//                
+//                print(error)
+//                
+//            }
+//            
+//            else{
+//                
+//                if let user = user{
+//                    
+//                    print(user)
+//                    
+//                }
+//                
+//                
+//            }
+//            
+//            
+//        }
         
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+//        let permissions = ["public_profile"]
+//                PFFacebookUtils.logInInBackground(withReadPermissions: permissions) { (user, error) in
+//                    
+//                    if let error = error{
+//        
+//                        print(error)
+//        
+//                    }
+//        
+//                    else{
+//        
+//                        if let user = user{
+//                            print("aaaaa")
+//                            print(user)
+//        
+//                        }
+//                        
+//                        
+//                    }
+//                    
+//                    
+//                }
+//        print("varun")
+      
+        
+
     }
 //action in self.performSegue(withIdentifier: "booksPage", sender: self)
     override func didReceiveMemoryWarning() {
