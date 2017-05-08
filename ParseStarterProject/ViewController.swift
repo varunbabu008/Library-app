@@ -133,7 +133,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+//        
 //        let permissions = ["public_profile"]
 //        PFFacebookUtils.logInInBackground(withReadPermissions: permissions) { (user, error) in
 //            
@@ -170,7 +170,7 @@ class ViewController: UIViewController {
 //                    }
 //        
 //                    else{
-//        
+//                        print("Hello")
 //                        if let user = user{
 //                            print("aaaaa")
 //                            print(user)
@@ -183,7 +183,7 @@ class ViewController: UIViewController {
 //                    
 //                }
 //        print("varun")
-      
+////
         
 
     }
