@@ -159,6 +159,29 @@ class ViewController: UIViewController {
         
         
     }
+    let permissions = [ "email","user_birthday", "public_profile", "user_friends"]
+    @IBAction func FacebookLogin(_ sender: Any) {
+        
+        //var permissions = [ "public_profile" ]
+        
+        PFFacebookUtils.logInInBackground(withReadPermissions: permissions) { (user, error) in            if let user = user {
+            if user.isNew {
+                print("User signed up and logged in through Facebook!")
+                self.displayAlert(title: "Sign up and Login Succesful", message: "Login Successful")
+
+            } else {
+                print("User logged in through Facebook!")
+                self.displayAlert(title: "Login Succesful", message: "Login Successful")
+
+            }
+        } else {
+            print("Uh oh. The user cancelled the Facebook login.")
+            }
+        }
+        
+        
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
 //        let permissions = ["public_profile"]
 //                PFFacebookUtils.logInInBackground(withReadPermissions: permissions) { (user, error) in
@@ -171,6 +194,8 @@ class ViewController: UIViewController {
 //        
 //                    else{
 //                        print("Hello")
+//                        print(user)
+//                        print(error)
 //                        if let user = user{
 //                            print("aaaaa")
 //                            print(user)
@@ -184,8 +209,11 @@ class ViewController: UIViewController {
 //                }
 //        print("varun")
 ////
-        
+//        
 
+        
+        
+        
     }
 //action in self.performSegue(withIdentifier: "booksPage", sender: self)
     override func didReceiveMemoryWarning() {

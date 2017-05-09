@@ -18,6 +18,7 @@ import ParseFacebookUtilsV4
 
 
 
+
 // If you want to use any of the UI components, uncomment this line
 // import ParseUI
 
@@ -52,11 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // described here: https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/
         // Uncomment the line inside ParseStartProject-Bridging-Header and the following line here:
         // PFFacebookUtils.initializeFacebook()
+        
         // ****************************************************************************
 
         //PFUser.enableAutomaticUser()
         
-
         PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
         
         let defaultACL = PFACL();
@@ -66,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         PFACL.setDefault(defaultACL, withAccessForCurrentUser: true)
 
-        if application.applicationState != UIApplicationState.background {
+        //if application.applicationState != UIApplicationState.background {
             // Track an app open here if we launch with a push, unless
             // "content_available" was used to trigger a background push (introduced in iOS 7).
             // In that case, we skip tracking here to avoid double counting the app-open.
@@ -81,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 PFAnalytics.trackAppOpened(launchOptions: launchOptions)
             }
  */
-        }
+       	 //}
 
         //
         //  Swift 1.2
@@ -109,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //            application.registerForRemoteNotificationTypes(types)
         //        }
 
-        return FBSDKApplicationDelegate.sharedInstance().application(application,didFinishLaunchingWithOptions:launchOptions)
+        return true
     }
 
     //--------------------------------------
@@ -149,16 +150,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //Added by VB
     
-    func application(application:UIApplication,openURL url: NSURL,sourceApplication:String?,
-        annotation:AnyObject) ->Bool{
-        
-        return FBSDKApplicationDelegate.sharedInstance().application(application,open: url as URL!, sourceApplication: sourceApplication,annotation: annotation)
-        
+    
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
+    
+    
+    
+    
+//    func application(application:UIApplication,openURL url: NSURL,sourceApplication:String?,
+//        annotation:AnyObject) ->Bool{
+//        
+//        return FBSDKApplicationDelegate.sharedInstance().application(application,open: url as URL!, sourceApplication: sourceApplication,annotation: annotation)
+//        
+//    }
     
 //    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
 //        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
 //    }
+    
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         FBSDKAppEvents.activateApp()
@@ -190,6 +201,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
 //         return FBAppCall.handleOpenURL(url, sourceApplication:sourceApplication, session:PFFacebookUtils.session())
 //     }
+    
+    
     
     
     
