@@ -13,6 +13,9 @@ import Parse
 
 import ParseFacebookUtilsV4
 
+import Stripe
+
+
 
 
 
@@ -34,6 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Enable storing and querying data from Local Datastore.
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
+        
+        
+        Stripe.setDefaultPublishableKey("pk_test_7hHgYDh2z7OTmmLuzOk3BEYc")
+        STPPaymentConfiguration.shared().smsAutofillDisabled = true
+        
         Parse.enableLocalDatastore()
         
         let parseConfiguration = ParseClientConfiguration(block: { (ParseMutableClientConfiguration) -> Void in
@@ -59,6 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //PFUser.enableAutomaticUser()
         
         PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
+        
         
         let defaultACL = PFACL();
 

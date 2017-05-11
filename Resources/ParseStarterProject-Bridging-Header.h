@@ -11,6 +11,8 @@
 
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import <FBSDKCoreKit/FBSDKcoreKit.h>
+#import <Stripe/Stripe.h>
+#import <AFNetworking/AFNetworking.h>
 
 
 

@@ -23,9 +23,11 @@
 		9501C9EC1EBF5F2D00B5A7F6 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501C9EB1EBF5F2D00B5A7F6 /* HistoryViewController.swift */; };
 		9568671A1EB89B7000DC28DD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956867181EB89B7000DC28DD /* FBSDKCoreKit.framework */; };
 		9568671B1EB89B7000DC28DD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956867191EB89B7000DC28DD /* FBSDKLoginKit.framework */; };
-		956867201EB8C22400DC28DD /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9568671F1EB8C22400DC28DD /* ParseFacebookUtilsV4.framework */; };
 		95CA9F8F1EBABE8D00F0F98E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA9F8E1EBABE8D00F0F98E /* BooksViewController.swift */; };
 		95CA9F911EBAEA1400F0F98E /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA9F901EBAEA1400F0F98E /* BookDetailsViewController.swift */; };
+		95F5438C1EC3EB8300C1D131 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5438B1EC3EB8300C1D131 /* Stripe.framework */; };
+		95F5438E1EC3EFD400C1D131 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5438D1EC3EFD400C1D131 /* PaymentsViewController.swift */; };
+		95F543901EC4047700C1D131 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5438F1EC4047700C1D131 /* AFNetworking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,13 @@
 		956867211EB8CEEE00DC28DD /* ParseStarterProject-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ParseStarterProject-Swift.entitlements"; sourceTree = "<group>"; };
 		95CA9F8E1EBABE8D00F0F98E /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		95CA9F901EBAEA1400F0F98E /* BookDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
+		95F543831EC3E3D500C1D131 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "Pods/../build/Debug-iphoneos/Stripe/Stripe.framework"; sourceTree = "<group>"; };
+		95F543851EC3E3FF00C1D131 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "Pods/../build/Debug-iphoneos/Stripe/Stripe.framework"; sourceTree = "<group>"; };
+		95F543871EC3E43900C1D131 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "Pods/../build/Debug-iphoneos/Stripe/Stripe.framework"; sourceTree = "<group>"; };
+		95F543891EC3E55E00C1D131 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "Pods/../build/Debug-iphoneos/Stripe/Stripe.framework"; sourceTree = "<group>"; };
+		95F5438B1EC3EB8300C1D131 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "Pods/../build/Debug-iphoneos/Stripe/Stripe.framework"; sourceTree = "<group>"; };
+		95F5438D1EC3EFD400C1D131 /* PaymentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsViewController.swift; sourceTree = "<group>"; };
+		95F5438F1EC4047700C1D131 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/ParseStarterProject-Swift-fdadbwiqvvejhqcyydnryggqwgdh/Build/Products/Debug-iphonesimulator/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		C7519BC78E14DDEF97268478 /* Pods_ParseStarterProject_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParseStarterProject_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,7 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				956867201EB8C22400DC28DD /* ParseFacebookUtilsV4.framework in Frameworks */,
+				95F543901EC4047700C1D131 /* AFNetworking.framework in Frameworks */,
+				95F5438C1EC3EB8300C1D131 /* Stripe.framework in Frameworks */,
 				81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */,
 				81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */,
 				81BA81791A49E0DB00E65899 /* AudioToolbox.framework in Frameworks */,
@@ -130,6 +140,7 @@
 				9501C9E51EBDA8F300B5A7F6 /* ProfileViewController.swift */,
 				9501C9E71EBDD53B00B5A7F6 /* FindUsViewController.swift */,
 				9501C9EB1EBF5F2D00B5A7F6 /* HistoryViewController.swift */,
+				95F5438D1EC3EFD400C1D131 /* PaymentsViewController.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -137,6 +148,12 @@
 		81BA816A1A49DB5600E65899 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95F5438F1EC4047700C1D131 /* AFNetworking.framework */,
+				95F5438B1EC3EB8300C1D131 /* Stripe.framework */,
+				95F543891EC3E55E00C1D131 /* Stripe.framework */,
+				95F543871EC3E43900C1D131 /* Stripe.framework */,
+				95F543851EC3E3FF00C1D131 /* Stripe.framework */,
+				95F543831EC3E3D500C1D131 /* Stripe.framework */,
 				9568671F1EB8C22400DC28DD /* ParseFacebookUtilsV4.framework */,
 				9568671D1EB8BC9600DC28DD /* ParseFacebookUtilsV4.framework */,
 				81BA816B1A49DB6800E65899 /* Bolts.framework */,
@@ -297,6 +314,7 @@
 				95CA9F8F1EBABE8D00F0F98E /* BooksViewController.swift in Sources */,
 				9501C9EC1EBF5F2D00B5A7F6 /* HistoryViewController.swift in Sources */,
 				9501C9E81EBDD53B00B5A7F6 /* FindUsViewController.swift in Sources */,
+				95F5438E1EC3EFD400C1D131 /* PaymentsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +428,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/varunbabu/Documents/FacebookSDKs-iOS-4",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ParseFacebookUtilsV4",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Stripe",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -432,6 +451,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/varunbabu/Documents/FacebookSDKs-iOS-4",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ParseFacebookUtilsV4",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Stripe",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

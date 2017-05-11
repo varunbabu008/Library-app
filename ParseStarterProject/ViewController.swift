@@ -132,41 +132,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-//        
-//        let permissions = ["public_profile"]
-//        PFFacebookUtils.logInInBackground(withReadPermissions: permissions) { (user, error) in
-//            
-//            if let error = error{
-//                
-//                print(error)
-//                
-//            }
-//            
-//            else{
-//                
-//                if let user = user{
-//                    
-//                    print(user)
-//                    
-//                }
-//                
-//                
-//            }
-//            
-//            
-//        }
-        
-        
+
     }
+    
+    
     let permissions = [ "email","user_birthday", "public_profile", "user_friends"]
+    
     @IBAction func FacebookLogin(_ sender: Any) {
-        
-        //var permissions = [ "public_profile" ]
         
         PFFacebookUtils.logInInBackground(withReadPermissions: permissions) { (user, error) in            if let user = user {
             if user.isNew {
                 print("User signed up and logged in through Facebook!")
+//                var user1 = PFUser.current()
+//                user1?["email"] = user.email
+//                //user1?["Birthday"] = user.Birt
+//                user1?.saveInBackground()
+                
                 self.displayAlert(title: "Sign up and Login Succesful", message: "Login Successful")
 
             } else {
@@ -183,34 +164,6 @@ class ViewController: UIViewController {
         
     }
     override func viewDidAppear(_ animated: Bool) {
-//        let permissions = ["public_profile"]
-//                PFFacebookUtils.logInInBackground(withReadPermissions: permissions) { (user, error) in
-//                    
-//                    if let error = error{
-//        
-//                        print(error)
-//        
-//                    }
-//        
-//                    else{
-//                        print("Hello")
-//                        print(user)
-//                        print(error)
-//                        if let user = user{
-//                            print("aaaaa")
-//                            print(user)
-//        
-//                        }
-//                        
-//                        
-//                    }
-//                    
-//                    
-//                }
-//        print("varun")
-////
-//        
-
         
         
         
