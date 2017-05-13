@@ -51,11 +51,13 @@ class PaymentsViewController: UIViewController {
         
         func postStripeToken(token:STPToken){
             
-            let URL = "http://localhost/donate/payment.php"
+           // let URL = "http://localhost/donate/payment.php"
+            //let URL = "http://ec2-54-206-38-168.ap-southeast-2.compute.amazonaws.com/donate/payment.php"
             
+            let URL = "http://ec2-54-245-158-23.us-west-2.compute.amazonaws.com/donate/payment.php"
             let params = ["stripeToken": token.tokenId,
                           "amount": Int(amountTextField.text!),
-                          "currency": "usd",
+                          "currency": "aud",
                           "description": self.emailTextField.text] as [String : Any]
             
             print(amountTextField.text)
@@ -66,7 +68,6 @@ class PaymentsViewController: UIViewController {
             let manager = AFHTTPSessionManager()
             manager.responseSerializer = AFHTTPResponseSerializer()
             
-           // manager.post(URL, parameters: para, progress: <#T##((Progress) -> Void)?##((Progress) -> Void)?##(Progress) -> Void#>, success: ((URLSessionDataTask, Any?) -> Void)?, failure: ((URLSessionDataTask?, Error) -> Void)?)
             
             
            manager.post(URL, parameters: params, success: { (operation,responseObject) in
