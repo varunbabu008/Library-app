@@ -100,7 +100,7 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
         
         let query = PFQuery(className: "Books")
         
-        query.limit = 10
+        //query.limit = 10
         
         query.findObjectsInBackground(block: { (objects, error) in
             
@@ -174,9 +174,15 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
         
         //cell.textLabel?.text = requestBooks[indexPath.row]
         
-            
+        
         cell.textLabel?.text = bookObjects[indexPath.row]["Title"] as? String
+        
+        var PFImage = bookObjects[indexPath.row]["Image"] as? PFFile
+        
+        PFImage?.getDataInBackground(block: { (result, error) in
+        cell.imageView?.image = UIImage(data: result!)
             
+        })
         
         
         return cell

@@ -14,6 +14,7 @@ class BookDetailsViewController: UIViewController {
     
     var item: PFObject?
     
+    @IBOutlet var imageView: UIView!
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var ISBNTextField: UITextField!
     @IBOutlet var authorTextField: UITextField!
@@ -71,6 +72,8 @@ class BookDetailsViewController: UIViewController {
         authorTextField.text = item?["Author"] as! String
         genreTextField.text = item?["Genre"] as! String
         locationTextField.text = item?["Location"] as! String
+        var image = item?["Image"] as? PFFile
+        
         
     }
     
