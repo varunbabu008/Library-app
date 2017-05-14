@@ -9,6 +9,7 @@
 import UIKit
 import Stripe
 import AFNetworking
+import Parse
 
 class PaymentsViewController: UIViewController {
 
@@ -17,6 +18,21 @@ class PaymentsViewController: UIViewController {
     @IBOutlet var expireDateTextField: UITextField!
     @IBOutlet var cvcTextField: UITextField!
     @IBOutlet var amountTextField: UITextField!
+    @IBOutlet var fineAmt: UILabel!
+    
+    
+//    var test = [String: String](){
+//        didSet{
+//            
+//            UIAlertView(title: test["status"],
+//                        message: test["message"],
+//                        delegate: nil,
+//                        cancelButtonTitle: "OK").show()
+//            print(test)
+//            
+//        }
+//    
+//    }
     @IBAction func Pay(_ sender: Any) {
         
         
@@ -29,9 +45,12 @@ class PaymentsViewController: UIViewController {
             cardParams.cvc = cvcTextField.text
         if STPCardValidator.validationState(forCard: cardParams) == .invalid {
             
+            //return
+            UIAlertView(title: "Invalid Card", message: "Try a different card", delegate: nil, cancelButtonTitle: "OK").show()
             return
-            
         }
+        
+        
         
         STPAPIClient.shared().createToken(withCard: cardParams, completion: { (token, error) in
             
@@ -66,17 +85,22 @@ class PaymentsViewController: UIViewController {
             print(emailTextField.text)
             print(expireDateTextField.text)
             let manager = AFHTTPSessionManager()
-            manager.responseSerializer = AFHTTPResponseSerializer()
+            //manager.responseSerializer = AFHTTPResponseSerializer()
             
             
             
-           manager.post(URL, parameters: params, success: { (operation,responseObject) in
+           manager.post(URL, parameters: params,progress: nil, success: { (operation,responseObject) in
+            //print(responseObject)
+            print(operation)
             if let response = responseObject as? [String: String] {
                 UIAlertView(title: response["status"],
                             message: response["message"],
                             delegate: nil,
                             cancelButtonTitle: "OK").show()
+                print(response)
+//                self.test = response
             }
+            
            },failure: {
             
             (operation, error) in
@@ -109,7 +133,65 @@ class PaymentsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        let DateNow = formatter.string(from: date)
+        let query = PFQuery(className: "Borrowers")
+        query.whereKey("Username", equalTo: PFUser.current()!.username)
+        query.findObjectsInBackground { (results, error) in
+            
+            if let borrowers = results{
+                
+                for borrower in borrowers{
+                    
+                    if let borrowedDate = borrower["BorrowedDate"] as? Date{
+                        
+                        let borrowD = formatter.string(from:borrowedDate)
+                        print(borrowD)
+                        var FourteenDaysfromNow: Date {
+                            return (Calendar.current as NSCalendar).date(byAdding: .day, value: 14, to: Date(), options: [])!
+                        }
+                        let dueD = formatter.string(from:FourteenDaysfromNow)
+                        
+                        print(dueD)
+                        
+                        let days: Int = self.calculateDaysBetweenTwoDates(start: borrowedDate, end: date)
+                        print(days)
+                        if(days > 14){
+                            
+                            self.fineAmt.text = "You have overdue Books in posession and the amount to be paid is 10$. Please check your History to view books"
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+                
+                
+            }
+            
+            
+        }
+        
+        
+        
     }
+    
+        
+    private func calculateDaysBetweenTwoDates(start: Date, end: Date) -> Int {
+        
+        let currentCalendar = Calendar.current
+        guard let start = currentCalendar.ordinality(of: .day, in: .era, for: start) else {
+            return 0
+        }
+        guard let end = currentCalendar.ordinality(of: .day, in: .era, for: end) else {
+            return 0
+        }
+        return end - start
+    }
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
