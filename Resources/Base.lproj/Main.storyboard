@@ -120,18 +120,18 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="156"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qEF-fQ-aVR" id="l2e-Pu-Bjn">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="156"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="155.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Od-yi-Kt4">
-                                            <rect key="frame" x="54" y="13" width="240" height="128"/>
+                                            <rect key="frame" x="108" y="13" width="186" height="128"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="3Od-yi-Kt4" firstAttribute="top" secondItem="l2e-Pu-Bjn" secondAttribute="topMargin" constant="5" id="3Ht-GR-mZ9"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="3Od-yi-Kt4" secondAttribute="trailing" constant="73" id="Qbv-0R-bE3"/>
                                         <constraint firstItem="3Od-yi-Kt4" firstAttribute="centerY" secondItem="l2e-Pu-Bjn" secondAttribute="centerY" id="Z8w-ND-2Fe"/>
-                                        <constraint firstItem="3Od-yi-Kt4" firstAttribute="leading" secondItem="l2e-Pu-Bjn" secondAttribute="leadingMargin" constant="46" id="gPz-qo-GCS"/>
+                                        <constraint firstItem="3Od-yi-Kt4" firstAttribute="leading" secondItem="l2e-Pu-Bjn" secondAttribute="leadingMargin" constant="100" id="gPz-qo-GCS"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -289,7 +289,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IAO-Nq-yCv" id="1Oc-Ty-YAc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -546,7 +546,7 @@
                         <outlet property="ISBNTextField" destination="NvV-kc-QeQ" id="hst-Qe-FuR"/>
                         <outlet property="authorTextField" destination="tyn-qJ-4oT" id="mSi-K6-fjo"/>
                         <outlet property="genreTextField" destination="vsR-N2-Oa2" id="sQ7-6s-1jJ"/>
-                        <outlet property="imageView" destination="WgD-zb-AQp" id="APZ-iM-5oR"/>
+                        <outlet property="imageView" destination="zuU-cz-NdS" id="ijb-kd-Rvp"/>
                         <outlet property="locationTextField" destination="A5l-X9-VeD" id="8Fs-iV-gij"/>
                         <outlet property="titleTextField" destination="bxc-xu-PIe" id="yKe-Ah-Qye"/>
                     </connections>

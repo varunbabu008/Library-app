@@ -11,6 +11,22 @@ import UIKit
 import Parse
 import ParseFacebookUtilsV4
 
+
+
+// Put this piece of code anywhere you like
+// To dismiss keyboard
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet var userNameTextField: UITextField!
@@ -132,6 +148,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
 
     }
     

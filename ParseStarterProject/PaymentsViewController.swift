@@ -131,7 +131,7 @@ class PaymentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
         let date = Date()
         let formatter = DateFormatter()

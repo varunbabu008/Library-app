@@ -26,6 +26,8 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
         search()
         getBooks()
         
+        self.hideKeyboardWhenTappedAround()
+        
         
         
 

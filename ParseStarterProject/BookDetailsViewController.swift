@@ -14,7 +14,8 @@ class BookDetailsViewController: UIViewController {
     
     var item: PFObject?
     
-    @IBOutlet var imageView: UIView!
+   
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var ISBNTextField: UITextField!
     @IBOutlet var authorTextField: UITextField!
@@ -57,7 +58,7 @@ class BookDetailsViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
         
         //titleTextField.text = Booktitle
@@ -73,6 +74,9 @@ class BookDetailsViewController: UIViewController {
         genreTextField.text = item?["Genre"] as! String
         locationTextField.text = item?["Location"] as! String
         var image = item?["Image"] as? PFFile
+        image?.getDataInBackground(block: { (result, error) in
+            self.imageView.image = UIImage(data: result!)
+        })
         
         
     }

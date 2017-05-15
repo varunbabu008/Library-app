@@ -51,6 +51,7 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         getBorrowedISBN()
         

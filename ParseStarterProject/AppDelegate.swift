@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.enableLocalDatastore()
         
+        
         let parseConfiguration = ParseClientConfiguration(block: { (ParseMutableClientConfiguration) -> Void in
             ParseMutableClientConfiguration.applicationId = "1e2c67b1b0095caf4b4ced7f78e8f6cbdba11af5"
             ParseMutableClientConfiguration.clientKey = "d56d61afb06b03ee58f9a55455e0ed0453c593e7"
@@ -65,9 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // ****************************************************************************
 
         //PFUser.enableAutomaticUser()
+       
         
         PFFacebookUtils.initializeFacebook(applicationLaunchOptions: launchOptions)
-        
+        //PFUser.enableRevocableSessionInBackground()
         
         let defaultACL = PFACL();
 
