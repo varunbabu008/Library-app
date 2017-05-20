@@ -9,5 +9,5 @@ target 'ParseStarterProject-Swift' do
 pod 'ParseFacebookUtilsV4'
 pod 'Stripe'
 pod 'AFNetworking'
-pod 'UberRides'
+pod "UberRides", :git => "https://github.com/uber/rides-ios-sdk.git", :branch => "swift-3-dev"
 end

@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import UberRides
 
 class BookDetailsViewController: UIViewController {
     var Booktitle = ""
@@ -21,6 +22,10 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet var authorTextField: UITextField!
     @IBOutlet var genreTextField: UITextField!
     @IBOutlet var locationTextField: UITextField!
+    
+    
+    
+    
     @IBAction func placeOnHold(_ sender: Any) {
         
         
@@ -58,6 +63,9 @@ class BookDetailsViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+                
+        
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
         

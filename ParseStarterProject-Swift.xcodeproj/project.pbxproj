@@ -56,6 +56,8 @@
 		9568671D1EB8BC9600DC28DD /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "Pods/../build/Debug-iphoneos/ParseFacebookUtilsV4/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 		9568671F1EB8C22400DC28DD /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/ParseStarterProject-Swift-fdadbwiqvvejhqcyydnryggqwgdh/Build/Products/Debug-iphonesimulator/ParseFacebookUtilsV4/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 		956867211EB8CEEE00DC28DD /* ParseStarterProject-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ParseStarterProject-Swift.entitlements"; sourceTree = "<group>"; };
+		95A042BB1ED09DE3002AD472 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/ObjectMapper.framework"; sourceTree = "<group>"; };
+		95A042BD1ED09F2C002AD472 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/ParseStarterProject-Swift-fdadbwiqvvejhqcyydnryggqwgdh/Build/Products/Debug-iphonesimulator/UberRides/UberRides.framework"; sourceTree = "<group>"; };
 		95CA9F8E1EBABE8D00F0F98E /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		95CA9F901EBAEA1400F0F98E /* BookDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
 		95F543831EC3E3D500C1D131 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "Pods/../build/Debug-iphoneos/Stripe/Stripe.framework"; sourceTree = "<group>"; };
@@ -148,6 +150,8 @@
 		81BA816A1A49DB5600E65899 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95A042BD1ED09F2C002AD472 /* UberRides.framework */,
+				95A042BB1ED09DE3002AD472 /* ObjectMapper.framework */,
 				95F5438F1EC4047700C1D131 /* AFNetworking.framework */,
 				95F5438B1EC3EB8300C1D131 /* Stripe.framework */,
 				95F543891EC3E55E00C1D131 /* Stripe.framework */,
@@ -429,6 +433,7 @@
 					"/Users/varunbabu/Documents/FacebookSDKs-iOS-4",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ParseFacebookUtilsV4",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Stripe",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -452,6 +457,7 @@
 					"/Users/varunbabu/Documents/FacebookSDKs-iOS-4",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ParseFacebookUtilsV4",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Stripe",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
