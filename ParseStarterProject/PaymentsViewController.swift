@@ -21,18 +21,7 @@ class PaymentsViewController: UIViewController {
     @IBOutlet var fineAmt: UILabel!
     
     
-//    var test = [String: String](){
-//        didSet{
-//            
-//            UIAlertView(title: test["status"],
-//                        message: test["message"],
-//                        delegate: nil,
-//                        cancelButtonTitle: "OK").show()
-//            print(test)
-//            
-//        }
-//    
-//    }
+    // When Pay button Tapped
     @IBAction func Pay(_ sender: Any) {
         
         
@@ -51,6 +40,7 @@ class PaymentsViewController: UIViewController {
         }
         
         
+        //Connects to Stripe sertver and gets the token 
         
         STPAPIClient.shared().createToken(withCard: cardParams, completion: { (token, error) in
             
@@ -68,10 +58,11 @@ class PaymentsViewController: UIViewController {
         })
         
         
+        // sends the Form parameters to the PHP Remote server for processing. The Card is charged here
         func postStripeToken(token:STPToken){
             
-           // let URL = "http://localhost/donate/payment.php"
-            //let URL = "http://ec2-54-206-38-168.ap-southeast-2.compute.amazonaws.com/donate/payment.php"
+            // LocalHost url
+            // let URL = "http://localhost/donate/payment.php"
             
             let URL = "http://ec2-54-245-158-23.us-west-2.compute.amazonaws.com/donate/payment.php"
             let params = ["stripeToken": token.tokenId,
@@ -88,7 +79,7 @@ class PaymentsViewController: UIViewController {
             //manager.responseSerializer = AFHTTPResponseSerializer()
             
             
-            
+            // POST Request to PHP server
            manager.post(URL, parameters: params,progress: nil, success: { (operation,responseObject) in
             //print(responseObject)
             print(operation)
@@ -104,17 +95,13 @@ class PaymentsViewController: UIViewController {
            },failure: {
             
             (operation, error) in
-            print(error	)
+            print(error)
+            
+            self.handleError(error: error as NSError)
+            
            })
             
-            
         }
-        
-        
-        
-        
-        
-        
     }
         
         
@@ -159,8 +146,9 @@ class PaymentsViewController: UIViewController {
                         let days: Int = self.calculateDaysBetweenTwoDates(start: borrowedDate, end: date)
                         print(days)
                         if(days > 14){
-                            
-                            self.fineAmt.text = "You have overdue Books in posession and the amount to be paid is 10$. Please check your History to view books"
+                            let multiplier = days - 14
+                            let amtToBePaid = 10 * multiplier
+                            self.fineAmt.text = "You have overdue Books in posession and the amount to be paid is \(amtToBePaid)$. Please check your History to view books"
                             
                         }
                         
@@ -179,7 +167,7 @@ class PaymentsViewController: UIViewController {
         
     }
     
-        
+    // Returns the difference between two days
     private func calculateDaysBetweenTwoDates(start: Date, end: Date) -> Int {
         
         let currentCalendar = Calendar.current

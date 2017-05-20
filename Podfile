@@ -9,4 +9,5 @@ target 'ParseStarterProject-Swift' do
 pod 'ParseFacebookUtilsV4'
 pod 'Stripe'
 pod 'AFNetworking'
+pod 'UberRides'
 end

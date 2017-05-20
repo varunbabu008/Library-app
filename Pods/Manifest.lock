@@ -24,6 +24,7 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.22.0):
     - FBSDKCoreKit
+  - ObjectMapper (1.5.0)
   - Parse (1.14.4):
     - Bolts/Tasks (~> 1.8)
   - ParseFacebookUtilsV4 (1.11.1):
@@ -33,21 +34,26 @@ PODS:
     - FBSDKTVOSKit (~> 4.10)
     - Parse (~> 1.12)
   - Stripe (10.0.1)
+  - UberRides (0.6.0):
+    - ObjectMapper (~> 1.0)
 
 DEPENDENCIES:
   - AFNetworking
   - ParseFacebookUtilsV4
   - Stripe
+  - UberRides
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FBSDKCoreKit: c693bad19feb225469eeff14452ba364522ee48b
   FBSDKLoginKit: 1fa529fc622d7b32ebeaffbecd377180833c6d30
+  ObjectMapper: 386645adca9d9d23b95eda43090b09d66444cf14
   Parse: b0aa91d2c435e53d4a9af26e741e014c9b35c42e
   ParseFacebookUtilsV4: 2f30c2b7021c8005d3042781da7ef87d06589421
   Stripe: dd6df0e2c6a8463e2f1ca9b15dc246e5ae1eee64
+  UberRides: 06d27966d0488209fc4e5a283af6e36e8b0ed7e2
 
-PODFILE CHECKSUM: 45948fae9d9ddc7624bb28be45ffbb73b3ed91b5
+PODFILE CHECKSUM: 357ccb9737850b1ef62ab9146303e28e378a7c35
 
 COCOAPODS: 1.2.1
