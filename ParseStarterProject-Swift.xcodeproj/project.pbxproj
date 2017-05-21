@@ -21,6 +21,7 @@
 		9501C9E61EBDA8F300B5A7F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501C9E51EBDA8F300B5A7F6 /* ProfileViewController.swift */; };
 		9501C9E81EBDD53B00B5A7F6 /* FindUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501C9E71EBDD53B00B5A7F6 /* FindUsViewController.swift */; };
 		9501C9EC1EBF5F2D00B5A7F6 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501C9EB1EBF5F2D00B5A7F6 /* HistoryViewController.swift */; };
+		9509AFD51ED15891000AD3AC /* BookHistoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509AFD41ED15891000AD3AC /* BookHistoryDetailsViewController.swift */; };
 		9568671A1EB89B7000DC28DD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956867181EB89B7000DC28DD /* FBSDKCoreKit.framework */; };
 		9568671B1EB89B7000DC28DD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956867191EB89B7000DC28DD /* FBSDKLoginKit.framework */; };
 		95CA9F8F1EBABE8D00F0F98E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA9F8E1EBABE8D00F0F98E /* BooksViewController.swift */; };
@@ -50,6 +51,7 @@
 		9501C9E51EBDA8F300B5A7F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9501C9E71EBDD53B00B5A7F6 /* FindUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindUsViewController.swift; sourceTree = "<group>"; };
 		9501C9EB1EBF5F2D00B5A7F6 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		9509AFD41ED15891000AD3AC /* BookHistoryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookHistoryDetailsViewController.swift; sourceTree = "<group>"; };
 		956867181EB89B7000DC28DD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../../FacebookSDKs-iOS-4/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		956867191EB89B7000DC28DD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../../FacebookSDKs-iOS-4/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		9568671C1EB89D6800DC28DD /* ParseStarterProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParseStarterProject-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				9501C9E71EBDD53B00B5A7F6 /* FindUsViewController.swift */,
 				9501C9EB1EBF5F2D00B5A7F6 /* HistoryViewController.swift */,
 				95F5438D1EC3EFD400C1D131 /* PaymentsViewController.swift */,
+				9509AFD41ED15891000AD3AC /* BookHistoryDetailsViewController.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 				9501C9E61EBDA8F300B5A7F6 /* ProfileViewController.swift in Sources */,
+				9509AFD51ED15891000AD3AC /* BookHistoryDetailsViewController.swift in Sources */,
 				95CA9F911EBAEA1400F0F98E /* BookDetailsViewController.swift in Sources */,
 				95CA9F8F1EBABE8D00F0F98E /* BooksViewController.swift in Sources */,
 				9501C9EC1EBF5F2D00B5A7F6 /* HistoryViewController.swift in Sources */,
@@ -436,6 +440,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivoryarcher.libraryapp;
 				PRODUCT_NAME = "ParseStarterProject-Swift";
@@ -460,6 +465,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ivoryarcher.libraryapp;
 				PRODUCT_NAME = "ParseStarterProject-Swift";

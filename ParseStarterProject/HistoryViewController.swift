@@ -8,6 +8,8 @@
 
 import UIKit
 import Parse
+import TableViewReloadAnimation
+import EZLoadingActivity
 
 class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
@@ -37,7 +39,8 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
                         
                     }
                     
-                    self.tableView.reloadData()
+                    self.tableView.reloadData( with: .spring(duration: 0.45, damping: 0.65, velocity: 1, direction: .right(useCellsFrame: false),
+                                                             constantDelay: 0))
                     
                     
                 }
@@ -52,14 +55,15 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        
-        getBorrowedISBN()
+//        EZLoadingActivity.showWithDelay("Loading...", disableUI: false, seconds: 0.5)
+//        getBorrowedISBN()
         
 
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        EZLoadingActivity.showWithDelay("Loading...", disableUI: false, seconds: 0.5)
         getBorrowedISBN()
 
     }
@@ -117,9 +121,35 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         cell.textLabel?.text = bookObjects[indexPath.row]["Title"] as? String
         
+        var PFImage = bookObjects[indexPath.row]["Image"] as? PFFile
         
+        PFImage?.getDataInBackground(block: { (result, error) in
+            cell.imageView?.image = UIImage(data: result!)
+            
+        })
+
         
         return cell
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "BookHistoryDetails" {
+            
+            if let destination = segue.destination as? BookHistoryDetailsViewController{
+                
+                if let row = tableView.indexPathForSelectedRow?.row{
+                    
+                    //destination.Booktitle = requestBooks[row]
+                    
+                    destination.item = bookObjects[row]
+                    destination.navigationItem.title = "Book Histroy Details"
+                    
+                    
+                }
+            }
+            
+        }
         
     }
 

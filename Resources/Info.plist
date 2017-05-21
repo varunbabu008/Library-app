@@ -73,6 +73,8 @@
     <string>DJofvmPDr94GX8bltyOvIliDfwuXQmo_</string>
     <key>UberDisplayName</key>
     <string>Library App</string>
+    <key>UberServerToken</key>
+    <string>dhsZmWATk07knYcjPiuMh6cUke9q3GtKyK8_er2y</string>
     <key>UberCallbackURIs</key>
     <array>
         <dict>
@@ -81,6 +83,6 @@
             <key>URIString</key>
             <string>http://localhost/</string>
             </dict>
-        </array>
+    </array>
 </dict>
 </plist>

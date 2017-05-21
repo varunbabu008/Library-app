@@ -10,7 +10,6 @@
 import UIKit
 import Parse
 import ParseFacebookUtilsV4
-import UberRides
 
 
 
@@ -151,8 +150,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
-        let button = RideRequestButton()
-        view.addSubview(button)
 
 
     }

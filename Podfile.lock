@@ -20,6 +20,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - EZLoadingActivity (1.01)
   - FBSDKCoreKit (4.22.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.22.0):
@@ -34,13 +35,16 @@ PODS:
     - FBSDKTVOSKit (~> 4.10)
     - Parse (~> 1.12)
   - Stripe (10.0.1)
+  - TableViewReloadAnimation (0.0.5)
   - UberRides (0.7.0):
     - ObjectMapper (~> 2.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - EZLoadingActivity
   - ParseFacebookUtilsV4
   - Stripe
+  - TableViewReloadAnimation (~> 0.0.5)
   - UberRides (from `https://github.com/uber/rides-ios-sdk.git`, branch `swift-3-dev`)
 
 EXTERNAL SOURCES:
@@ -56,14 +60,16 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  EZLoadingActivity: edd7e387e5197b116ce2cccb3fd747ababc2a510
   FBSDKCoreKit: c693bad19feb225469eeff14452ba364522ee48b
   FBSDKLoginKit: 1fa529fc622d7b32ebeaffbecd377180833c6d30
   ObjectMapper: 042708195cc46c20871cbcbec0453826398273fd
   Parse: b0aa91d2c435e53d4a9af26e741e014c9b35c42e
   ParseFacebookUtilsV4: 2f30c2b7021c8005d3042781da7ef87d06589421
   Stripe: dd6df0e2c6a8463e2f1ca9b15dc246e5ae1eee64
+  TableViewReloadAnimation: f3a4c4048efbc56331be98075f26a2e533a14c16
   UberRides: 796f4335121c2c8223985329c6979a452edfe083
 
-PODFILE CHECKSUM: ea0c5c83fa07d76061f9e06d1d4d0e0c6c07fba5
+PODFILE CHECKSUM: 88e7c6d3b7745c6565c1b7a06731d1ef909b8232
 
 COCOAPODS: 1.2.1

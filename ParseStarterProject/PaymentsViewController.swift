@@ -121,6 +121,7 @@ class PaymentsViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
         let date = Date()
+        var amtToBePaid = 0
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         let DateNow = formatter.string(from: date)
@@ -147,7 +148,8 @@ class PaymentsViewController: UIViewController {
                         print(days)
                         if(days > 14){
                             let multiplier = days - 14
-                            let amtToBePaid = 10 * multiplier
+                            amtToBePaid += 10 * multiplier
+                            self.amountTextField.text = String(amtToBePaid)
                             self.fineAmt.text = "You have overdue Books in posession and the amount to be paid is \(amtToBePaid)$. Please check your History to view books"
                             
                         }

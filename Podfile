@@ -10,4 +10,6 @@ pod 'ParseFacebookUtilsV4'
 pod 'Stripe'
 pod 'AFNetworking'
 pod "UberRides", :git => "https://github.com/uber/rides-ios-sdk.git", :branch => "swift-3-dev"
+pod 'TableViewReloadAnimation', '~> 0.0.5'
+pod 'EZLoadingActivity'
 end

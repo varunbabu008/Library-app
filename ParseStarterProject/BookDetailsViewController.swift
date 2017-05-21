@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import UberRides
+import MapKit
 
 class BookDetailsViewController: UIViewController {
     var Booktitle = ""
@@ -26,40 +27,72 @@ class BookDetailsViewController: UIViewController {
     
     
     
+    //Uber Rides
+    let ridesClient = RidesClient()
+    let button = RideRequestButton()
+    
+    
     @IBAction func placeOnHold(_ sender: Any) {
         
         
-        let query = PFQuery(className: "Books")
+        let alertcontroller = UIAlertController(title: "Confirmation", message: "Are you sure you wanna borrow this book", preferredStyle: .alert)
         
-        query.whereKey("ISBN", equalTo: ISBNTextField.text)
-        
-        query.findObjectsInBackground { (results, error) in
+        alertcontroller.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+            //login unsuccesful if the message us not "Login Successful"
+           
+            let query = PFQuery(className: "Books")
             
-            if let books  = results{
+            query.whereKey("ISBN", equalTo: self.ISBNTextField.text)
+            
+            query.findObjectsInBackground { (results, error) in
                 
-                for book in books{
+                if let books  = results{
                     
-                    book["isRented"] = true as Bool
-                    book.saveInBackground()
+                    for book in books{
+                        
+                        book["isRented"] = true as Bool
+                        book.saveInBackground()
+                    }
+                    
+                    
                 }
                 
-                
             }
+            //Date
+            let date = Date()
+            var FourteenDaysfromNow: Date {
+                return (Calendar.current as NSCalendar).date(byAdding: .day, value: 14, to: Date(), options: [])!
+            }
+            //adding an entry to borrowers class
             
-        }
+            //let query1 = PFQuery(className: "Borrowers")
+            var currentUser = PFUser.current()!.username
+            //var username = currentUser?.username
+            var borrow = PFObject(className:"Borrowers")
+            borrow["Username"] = currentUser
+            borrow["ISBN"] = self.ISBNTextField.text
+            borrow["BorrowedDate"] = date
+            borrow["DueDate"] = FourteenDaysfromNow
+            borrow.saveInBackground()
+            
+        }))
         
-        //adding an entry to borrowers class
-        
-        //let query1 = PFQuery(className: "Borrowers")
-        var currentUser = PFUser.current()!.username
-        //var username = currentUser?.username
-        var borrow = PFObject(className:"Borrowers")
-        borrow["Username"] = currentUser
-        borrow["ISBN"] = ISBNTextField.text
-        borrow.saveInBackground()
+        alertcontroller.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {_ in
+            //login unsuccesful if the message us not "Login Successful"
+            return
+            
+        }))
         
         
         
+        self.present(alertcontroller, animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
+        return CGRect(x: x, y: y, width: width, height: height)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +100,30 @@ class BookDetailsViewController: UIViewController {
                 
         
         self.hideKeyboardWhenTappedAround()
+        
+        
+        let pickupLocation = CLLocation(latitude: 37.775159, longitude: -122.417907)
+        let dropoffLocation = CLLocation(latitude: 37.6213129, longitude: -122.3789554)
+        let builder = RideParametersBuilder().setPickupLocation(pickupLocation).setDropoffLocation(dropoffLocation,nickname:"Library")
+        ridesClient.fetchCheapestProduct(pickupLocation: pickupLocation, completion: {
+            product, response in
+            if let productID = product?.productID { //check if the productID exists
+                builder.setProductID(productID)
+                self.button.rideParameters = builder.build()
+                
+                // show estimates in the button
+                self.button.loadRideInformation()
+            }
+        })
+        
+
+        button.center = view.center
+        
+        //button.frame.size = CGSize(width:270,height:50)
+        button.frame = CGRectMake(55, 570, 270, 40)
+        
+        view.addSubview(button)
+        
         // Do any additional setup after loading the view.
         
         //titleTextField.text = Booktitle

@@ -8,6 +8,8 @@
 
 import UIKit
 import Parse
+import TableViewReloadAnimation
+import EZLoadingActivity
 
 class BooksViewController: UITableViewController,UISearchBarDelegate{
     
@@ -24,7 +26,7 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
         super.viewDidLoad()
         searchBar.delegate = self
         search()
-        getBooks()
+        //getBooks()
         
         self.hideKeyboardWhenTappedAround()
         
@@ -35,8 +37,9 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        //EZLoadingActivity.show("Loading...", disableUI: false)
         getBooks()
-
+        EZLoadingActivity.showWithDelay("Loading...", disableUI: false, seconds: 1)
     }
     
     func search(searchText:String? = nil){
@@ -53,7 +56,8 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
             //self.filteredBooks = (results)!
             
             self.bookObjects = (results)!
-            self.tableView.reloadData()
+            self.tableView.reloadData(with: .simple(duration: 0.45, direction: .left(useCellsFrame: true),
+                                                    constantDelay: 0))
         }
         
     }
@@ -127,7 +131,8 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
                     
                 }
                 
-                self.tableView.reloadData()
+                self.tableView.reloadData(with: .simple(duration: 0.45, direction: .left(useCellsFrame: true),
+                                                        constantDelay: 0))
                 
                 
             }
@@ -155,7 +160,6 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
             
         }
 
-        
     }
 
     
@@ -180,12 +184,16 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
         cell.textLabel?.text = bookObjects[indexPath.row]["Title"] as? String
         
         var PFImage = bookObjects[indexPath.row]["Image"] as? PFFile
+        //EZLoadingActivity.show("Loading...", disableUI: false)
         
         PFImage?.getDataInBackground(block: { (result, error) in
+            
+            
+           
         cell.imageView?.image = UIImage(data: result!)
+        //EZLoadingActivity.hide(true, animated: true)
             
         })
-        
         
         return cell
     
