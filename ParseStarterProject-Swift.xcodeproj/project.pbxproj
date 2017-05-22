@@ -22,8 +22,14 @@
 		9501C9E81EBDD53B00B5A7F6 /* FindUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501C9E71EBDD53B00B5A7F6 /* FindUsViewController.swift */; };
 		9501C9EC1EBF5F2D00B5A7F6 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501C9EB1EBF5F2D00B5A7F6 /* HistoryViewController.swift */; };
 		9509AFD51ED15891000AD3AC /* BookHistoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509AFD41ED15891000AD3AC /* BookHistoryDetailsViewController.swift */; };
+		9548CDA91ED2D4C200D0BB68 /* Money-55.png in Resources */ = {isa = PBXBuildFile; fileRef = 9548CDA81ED2D4C200D0BB68 /* Money-55.png */; };
 		9568671A1EB89B7000DC28DD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956867181EB89B7000DC28DD /* FBSDKCoreKit.framework */; };
 		9568671B1EB89B7000DC28DD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956867191EB89B7000DC28DD /* FBSDKLoginKit.framework */; };
+		957826631ED2BC750023F574 /* facebookLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 957826621ED2BC750023F574 /* facebookLogin.png */; };
+		957826671ED2C04C0023F574 /* User-35.png in Resources */ = {isa = PBXBuildFile; fileRef = 957826661ED2C04C0023F574 /* User-35.png */; };
+		957826711ED2CC430023F574 /* Order History-35.png in Resources */ = {isa = PBXBuildFile; fileRef = 957826701ED2CC430023F574 /* Order History-35.png */; };
+		957826731ED2CCC40023F574 /* Visa-35.png in Resources */ = {isa = PBXBuildFile; fileRef = 957826721ED2CCC40023F574 /* Visa-35.png */; };
+		957826751ED2CD4A0023F574 /* Marker-35.png in Resources */ = {isa = PBXBuildFile; fileRef = 957826741ED2CD4A0023F574 /* Marker-35.png */; };
 		95CA9F8F1EBABE8D00F0F98E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA9F8E1EBABE8D00F0F98E /* BooksViewController.swift */; };
 		95CA9F911EBAEA1400F0F98E /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA9F901EBAEA1400F0F98E /* BookDetailsViewController.swift */; };
 		95F5438C1EC3EB8300C1D131 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5438B1EC3EB8300C1D131 /* Stripe.framework */; };
@@ -52,12 +58,18 @@
 		9501C9E71EBDD53B00B5A7F6 /* FindUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindUsViewController.swift; sourceTree = "<group>"; };
 		9501C9EB1EBF5F2D00B5A7F6 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		9509AFD41ED15891000AD3AC /* BookHistoryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookHistoryDetailsViewController.swift; sourceTree = "<group>"; };
+		9548CDA81ED2D4C200D0BB68 /* Money-55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Money-55.png"; sourceTree = "<group>"; };
 		956867181EB89B7000DC28DD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../../FacebookSDKs-iOS-4/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		956867191EB89B7000DC28DD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../../FacebookSDKs-iOS-4/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		9568671C1EB89D6800DC28DD /* ParseStarterProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParseStarterProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		9568671D1EB8BC9600DC28DD /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "Pods/../build/Debug-iphoneos/ParseFacebookUtilsV4/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 		9568671F1EB8C22400DC28DD /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/ParseStarterProject-Swift-fdadbwiqvvejhqcyydnryggqwgdh/Build/Products/Debug-iphonesimulator/ParseFacebookUtilsV4/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 		956867211EB8CEEE00DC28DD /* ParseStarterProject-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ParseStarterProject-Swift.entitlements"; sourceTree = "<group>"; };
+		957826621ED2BC750023F574 /* facebookLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLogin.png; sourceTree = "<group>"; };
+		957826661ED2C04C0023F574 /* User-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "User-35.png"; sourceTree = "<group>"; };
+		957826701ED2CC430023F574 /* Order History-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Order History-35.png"; sourceTree = "<group>"; };
+		957826721ED2CCC40023F574 /* Visa-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Visa-35.png"; sourceTree = "<group>"; };
+		957826741ED2CD4A0023F574 /* Marker-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Marker-35.png"; sourceTree = "<group>"; };
 		95A042BB1ED09DE3002AD472 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/ObjectMapper.framework"; sourceTree = "<group>"; };
 		95A042BD1ED09F2C002AD472 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/ParseStarterProject-Swift-fdadbwiqvvejhqcyydnryggqwgdh/Build/Products/Debug-iphonesimulator/UberRides/UberRides.framework"; sourceTree = "<group>"; };
 		95CA9F8E1EBABE8D00F0F98E /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +118,12 @@
 		814C3AC51B69877600E307BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9548CDA81ED2D4C200D0BB68 /* Money-55.png */,
+				957826741ED2CD4A0023F574 /* Marker-35.png */,
+				957826721ED2CCC40023F574 /* Visa-35.png */,
+				957826701ED2CC430023F574 /* Order History-35.png */,
+				957826661ED2C04C0023F574 /* User-35.png */,
+				957826621ED2BC750023F574 /* facebookLogin.png */,
 				814C3AC81B69877600E307BB /* Images.xcassets */,
 				814C3AC91B69877600E307BB /* Info.plist */,
 				9568671C1EB89D6800DC28DD /* ParseStarterProject-Bridging-Header.h */,
@@ -254,8 +272,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				957826631ED2BC750023F574 /* facebookLogin.png in Resources */,
+				957826751ED2CD4A0023F574 /* Marker-35.png in Resources */,
+				957826711ED2CC430023F574 /* Order History-35.png in Resources */,
+				957826731ED2CCC40023F574 /* Visa-35.png in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
+				9548CDA91ED2D4C200D0BB68 /* Money-55.png in Resources */,
+				957826671ED2C04C0023F574 /* User-35.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -133,15 +133,7 @@ class BookDetailsViewController: UIViewController,CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
-        
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        locationManager.requestWhenInUseAuthorization()
-        
-        
-        locationManager.startUpdatingLocation()
-        
+        determineMyCurrentLocation()
         self.hideKeyboardWhenTappedAround()
         
         
@@ -186,7 +178,7 @@ class BookDetailsViewController: UIViewController,CLLocationManagerDelegate {
             self.imageView.image = UIImage(data: result!)
         })
         
-        locationManager.stopUpdatingLocation()
+      
         
     }
     
