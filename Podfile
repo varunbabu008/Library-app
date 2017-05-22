@@ -12,4 +12,5 @@ pod 'AFNetworking'
 pod "UberRides", :git => "https://github.com/uber/rides-ios-sdk.git", :branch => "swift-3-dev"
 pod 'TableViewReloadAnimation', '~> 0.0.5'
 pod 'EZLoadingActivity'
+pod 'RAMAnimatedTabBarController', "~> 2.0.13" 
 end

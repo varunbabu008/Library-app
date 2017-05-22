@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet var logoutButton: UIView!
     
+    @IBOutlet var usernameLabel: UILabel!
     @IBAction func logoutButtonFun(_ sender: Any) {
         
         
@@ -25,6 +26,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+        
+        usernameLabel.text = PFUser.current()?.username
     }
 
     override func didReceiveMemoryWarning() {

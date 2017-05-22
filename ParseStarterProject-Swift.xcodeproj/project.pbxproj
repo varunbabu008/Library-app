@@ -23,6 +23,15 @@
 		9501C9EC1EBF5F2D00B5A7F6 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9501C9EB1EBF5F2D00B5A7F6 /* HistoryViewController.swift */; };
 		9509AFD51ED15891000AD3AC /* BookHistoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9509AFD41ED15891000AD3AC /* BookHistoryDetailsViewController.swift */; };
 		9548CDA91ED2D4C200D0BB68 /* Money-55.png in Resources */ = {isa = PBXBuildFile; fileRef = 9548CDA81ED2D4C200D0BB68 /* Money-55.png */; };
+		9548CDAB1ED2EDA100D0BB68 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548CDAA1ED2EDA100D0BB68 /* MyTabBarController.swift */; };
+		9548CDAD1ED2F0C800D0BB68 /* TabBarAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9548CDAC1ED2F0C800D0BB68 /* TabBarAnimation.swift */; };
+		9548CDAF1ED2F46A00D0BB68 /* Search Filled-35.png in Resources */ = {isa = PBXBuildFile; fileRef = 9548CDAE1ED2F46A00D0BB68 /* Search Filled-35.png */; };
+		9548CDB11ED32E2100D0BB68 /* download.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9548CDB01ED32E2100D0BB68 /* download.jpeg */; };
+		9548CDB31ED3328300D0BB68 /* back1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9548CDB21ED3328300D0BB68 /* back1.jpeg */; };
+		9548CDB51ED3341100D0BB68 /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9548CDB41ED3341100D0BB68 /* back2.png */; };
+		9548CDB71ED3373B00D0BB68 /* back4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9548CDB61ED3373B00D0BB68 /* back4.jpeg */; };
+		9548CDB91ED339E100D0BB68 /* backbook.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9548CDB81ED339E100D0BB68 /* backbook.jpg */; };
+		9548CDBB1ED33DC200D0BB68 /* payment.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9548CDBA1ED33DC200D0BB68 /* payment.jpeg */; };
 		9568671A1EB89B7000DC28DD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956867181EB89B7000DC28DD /* FBSDKCoreKit.framework */; };
 		9568671B1EB89B7000DC28DD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956867191EB89B7000DC28DD /* FBSDKLoginKit.framework */; };
 		957826631ED2BC750023F574 /* facebookLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 957826621ED2BC750023F574 /* facebookLogin.png */; };
@@ -59,6 +68,15 @@
 		9501C9EB1EBF5F2D00B5A7F6 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		9509AFD41ED15891000AD3AC /* BookHistoryDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookHistoryDetailsViewController.swift; sourceTree = "<group>"; };
 		9548CDA81ED2D4C200D0BB68 /* Money-55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Money-55.png"; sourceTree = "<group>"; };
+		9548CDAA1ED2EDA100D0BB68 /* MyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
+		9548CDAC1ED2F0C800D0BB68 /* TabBarAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarAnimation.swift; sourceTree = "<group>"; };
+		9548CDAE1ED2F46A00D0BB68 /* Search Filled-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Search Filled-35.png"; sourceTree = "<group>"; };
+		9548CDB01ED32E2100D0BB68 /* download.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = download.jpeg; sourceTree = "<group>"; };
+		9548CDB21ED3328300D0BB68 /* back1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back1.jpeg; sourceTree = "<group>"; };
+		9548CDB41ED3341100D0BB68 /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
+		9548CDB61ED3373B00D0BB68 /* back4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back4.jpeg; sourceTree = "<group>"; };
+		9548CDB81ED339E100D0BB68 /* backbook.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backbook.jpg; sourceTree = "<group>"; };
+		9548CDBA1ED33DC200D0BB68 /* payment.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = payment.jpeg; sourceTree = "<group>"; };
 		956867181EB89B7000DC28DD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../../FacebookSDKs-iOS-4/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		956867191EB89B7000DC28DD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../../FacebookSDKs-iOS-4/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		9568671C1EB89D6800DC28DD /* ParseStarterProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParseStarterProject-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -118,6 +136,13 @@
 		814C3AC51B69877600E307BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9548CDBA1ED33DC200D0BB68 /* payment.jpeg */,
+				9548CDB81ED339E100D0BB68 /* backbook.jpg */,
+				9548CDB61ED3373B00D0BB68 /* back4.jpeg */,
+				9548CDB41ED3341100D0BB68 /* back2.png */,
+				9548CDB21ED3328300D0BB68 /* back1.jpeg */,
+				9548CDB01ED32E2100D0BB68 /* download.jpeg */,
+				9548CDAE1ED2F46A00D0BB68 /* Search Filled-35.png */,
 				9548CDA81ED2D4C200D0BB68 /* Money-55.png */,
 				957826741ED2CD4A0023F574 /* Marker-35.png */,
 				957826721ED2CCC40023F574 /* Visa-35.png */,
@@ -164,6 +189,8 @@
 				9501C9EB1EBF5F2D00B5A7F6 /* HistoryViewController.swift */,
 				95F5438D1EC3EFD400C1D131 /* PaymentsViewController.swift */,
 				9509AFD41ED15891000AD3AC /* BookHistoryDetailsViewController.swift */,
+				9548CDAA1ED2EDA100D0BB68 /* MyTabBarController.swift */,
+				9548CDAC1ED2F0C800D0BB68 /* TabBarAnimation.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -272,12 +299,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9548CDB71ED3373B00D0BB68 /* back4.jpeg in Resources */,
+				9548CDBB1ED33DC200D0BB68 /* payment.jpeg in Resources */,
 				957826631ED2BC750023F574 /* facebookLogin.png in Resources */,
 				957826751ED2CD4A0023F574 /* Marker-35.png in Resources */,
 				957826711ED2CC430023F574 /* Order History-35.png in Resources */,
+				9548CDB51ED3341100D0BB68 /* back2.png in Resources */,
+				9548CDAF1ED2F46A00D0BB68 /* Search Filled-35.png in Resources */,
 				957826731ED2CCC40023F574 /* Visa-35.png in Resources */,
+				9548CDB31ED3328300D0BB68 /* back1.jpeg in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
+				9548CDB91ED339E100D0BB68 /* backbook.jpg in Resources */,
 				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
+				9548CDB11ED32E2100D0BB68 /* download.jpeg in Resources */,
 				9548CDA91ED2D4C200D0BB68 /* Money-55.png in Resources */,
 				957826671ED2C04C0023F574 /* User-35.png in Resources */,
 			);
@@ -347,6 +381,8 @@
 				9501C9EC1EBF5F2D00B5A7F6 /* HistoryViewController.swift in Sources */,
 				9501C9E81EBDD53B00B5A7F6 /* FindUsViewController.swift in Sources */,
 				95F5438E1EC3EFD400C1D131 /* PaymentsViewController.swift in Sources */,
+				9548CDAD1ED2F0C800D0BB68 /* TabBarAnimation.swift in Sources */,
+				9548CDAB1ED2EDA100D0BB68 /* MyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
