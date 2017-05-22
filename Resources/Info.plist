@@ -55,7 +55,9 @@
 		<string>armv7</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>&quot;want to access location&quot;</string>
+	<string>want to access location</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Will you allow this app to always know your location for Uber?</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

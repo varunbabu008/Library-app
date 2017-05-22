@@ -10,8 +10,9 @@ import UIKit
 import Parse
 import UberRides
 import MapKit
+import CoreLocation
 
-class BookDetailsViewController: UIViewController {
+class BookDetailsViewController: UIViewController,CLLocationManagerDelegate {
     var Booktitle = ""
     
     var item: PFObject?
@@ -31,7 +32,12 @@ class BookDetailsViewController: UIViewController {
     let ridesClient = RidesClient()
     let button = RideRequestButton()
     
-    
+    var caulfield = CLLocation(latitude:-37.8770 , longitude:145.0443)
+    var clayton = CLLocation(latitude: -37.9150 , longitude:145.1300)
+    var peninsula = CLLocation(latitude:-38.1536 , longitude:145.1344)
+    var locationManager:CLLocationManager!
+    //var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    //var userLocation:CLLocation = CLLocation()
     @IBAction func placeOnHold(_ sender: Any) {
         
         
@@ -91,13 +97,50 @@ class BookDetailsViewController: UIViewController {
         
     }
     
+    func determineMyCurrentLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+            //locationManager.startUpdatingHeading()
+        }
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0] as CLLocation
+        
+        // Call stopUpdatingLocation() to stop listening for location updates,
+        // other wise this function will be called every time when user location changes.
+        
+        // manager.stopUpdatingLocation()
+        
+        print("user latitude = \(userLocation.coordinate.latitude)")
+        print("user longitude = \(userLocation.coordinate.longitude)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("Error \(error)")
+    }
+    
     func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
         return CGRect(x: x, y: y, width: width, height: height)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-                
+        locationManager.delegate = self
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        locationManager.requestWhenInUseAuthorization()
+        
+        
+        locationManager.startUpdatingLocation()
         
         self.hideKeyboardWhenTappedAround()
         
@@ -143,6 +186,7 @@ class BookDetailsViewController: UIViewController {
             self.imageView.image = UIImage(data: result!)
         })
         
+        locationManager.stopUpdatingLocation()
         
     }
     
