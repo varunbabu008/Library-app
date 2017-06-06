@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "95ED35FA1EE22410003C0F6C"
+               BuildableName = "ParseStarterProject-SwiftTests.xctest"
+               BlueprintName = "ParseStarterProject-SwiftTests"
+               ReferencedContainer = "container:ParseStarterProject-Swift.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "95E306641EE6BAD50081586F"
+               BuildableName = "ParseStarterProject-SwiftUITests.xctest"
+               BlueprintName = "ParseStarterProject-SwiftUITests"
+               ReferencedContainer = "container:ParseStarterProject-Swift.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

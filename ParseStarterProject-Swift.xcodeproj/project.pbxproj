@@ -41,10 +41,29 @@
 		957826751ED2CD4A0023F574 /* Marker-35.png in Resources */ = {isa = PBXBuildFile; fileRef = 957826741ED2CD4A0023F574 /* Marker-35.png */; };
 		95CA9F8F1EBABE8D00F0F98E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA9F8E1EBABE8D00F0F98E /* BooksViewController.swift */; };
 		95CA9F911EBAEA1400F0F98E /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA9F901EBAEA1400F0F98E /* BookDetailsViewController.swift */; };
+		95E306681EE6BAD50081586F /* ParseStarterProject_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E306671EE6BAD50081586F /* ParseStarterProject_SwiftUITests.swift */; };
+		95ED35FE1EE22410003C0F6C /* ParseStarterProject_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED35FD1EE22410003C0F6C /* ParseStarterProject_SwiftTests.swift */; };
 		95F5438C1EC3EB8300C1D131 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5438B1EC3EB8300C1D131 /* Stripe.framework */; };
 		95F5438E1EC3EFD400C1D131 /* PaymentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5438D1EC3EFD400C1D131 /* PaymentsViewController.swift */; };
 		95F543901EC4047700C1D131 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5438F1EC4047700C1D131 /* AFNetworking.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		95E3066A1EE6BAD50081586F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81BA813D1A49DA1800E65899 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81BA81441A49DA1800E65899;
+			remoteInfo = "ParseStarterProject-Swift";
+		};
+		95ED36001EE22410003C0F6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81BA813D1A49DA1800E65899 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81BA81441A49DA1800E65899;
+			remoteInfo = "ParseStarterProject-Swift";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6FCC63E1445AF3A25CC5A1A4 /* Pods-ParseStarterProject-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseStarterProject-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParseStarterProject-Swift/Pods-ParseStarterProject-Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +111,12 @@
 		95A042BD1ED09F2C002AD472 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/ParseStarterProject-Swift-fdadbwiqvvejhqcyydnryggqwgdh/Build/Products/Debug-iphonesimulator/UberRides/UberRides.framework"; sourceTree = "<group>"; };
 		95CA9F8E1EBABE8D00F0F98E /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		95CA9F901EBAEA1400F0F98E /* BookDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
+		95E306651EE6BAD50081586F /* ParseStarterProject-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ParseStarterProject-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95E306671EE6BAD50081586F /* ParseStarterProject_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseStarterProject_SwiftUITests.swift; sourceTree = "<group>"; };
+		95E306691EE6BAD50081586F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95ED35FB1EE22410003C0F6C /* ParseStarterProject-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ParseStarterProject-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95ED35FD1EE22410003C0F6C /* ParseStarterProject_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseStarterProject_SwiftTests.swift; sourceTree = "<group>"; };
+		95ED35FF1EE22410003C0F6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F543831EC3E3D500C1D131 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "Pods/../build/Debug-iphoneos/Stripe/Stripe.framework"; sourceTree = "<group>"; };
 		95F543851EC3E3FF00C1D131 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "Pods/../build/Debug-iphoneos/Stripe/Stripe.framework"; sourceTree = "<group>"; };
 		95F543871EC3E43900C1D131 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "Pods/../build/Debug-iphoneos/Stripe/Stripe.framework"; sourceTree = "<group>"; };
@@ -118,6 +143,20 @@
 				9568671B1EB89B7000DC28DD /* FBSDKLoginKit.framework in Frameworks */,
 				81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */,
 				5840464116B1C18BDC7C5919 /* Pods_ParseStarterProject_Swift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95E306621EE6BAD50081586F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95ED35F81EE22410003C0F6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +201,8 @@
 				956867211EB8CEEE00DC28DD /* ParseStarterProject-Swift.entitlements */,
 				81BA81471A49DA1800E65899 /* ParseStarterProject */,
 				814C3AC51B69877600E307BB /* Resources */,
+				95ED35FC1EE22410003C0F6C /* ParseStarterProject-SwiftTests */,
+				95E306661EE6BAD50081586F /* ParseStarterProject-SwiftUITests */,
 				81BA816A1A49DB5600E65899 /* Frameworks */,
 				81BA81461A49DA1800E65899 /* Products */,
 				1796B2468906A44AEE614811 /* Pods */,
@@ -172,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				81BA81451A49DA1800E65899 /* ParseStarterProject-Swift.app */,
+				95ED35FB1EE22410003C0F6C /* ParseStarterProject-SwiftTests.xctest */,
+				95E306651EE6BAD50081586F /* ParseStarterProject-SwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,6 +274,24 @@
 			name = "System Frameworks";
 			sourceTree = "<group>";
 		};
+		95E306661EE6BAD50081586F /* ParseStarterProject-SwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				95E306671EE6BAD50081586F /* ParseStarterProject_SwiftUITests.swift */,
+				95E306691EE6BAD50081586F /* Info.plist */,
+			);
+			path = "ParseStarterProject-SwiftUITests";
+			sourceTree = "<group>";
+		};
+		95ED35FC1EE22410003C0F6C /* ParseStarterProject-SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				95ED35FD1EE22410003C0F6C /* ParseStarterProject_SwiftTests.swift */,
+				95ED35FF1EE22410003C0F6C /* Info.plist */,
+			);
+			path = "ParseStarterProject-SwiftTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,13 +315,49 @@
 			productReference = 81BA81451A49DA1800E65899 /* ParseStarterProject-Swift.app */;
 			productType = "com.apple.product-type.application";
 		};
+		95E306641EE6BAD50081586F /* ParseStarterProject-SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95E3066E1EE6BAD50081586F /* Build configuration list for PBXNativeTarget "ParseStarterProject-SwiftUITests" */;
+			buildPhases = (
+				95E306611EE6BAD50081586F /* Sources */,
+				95E306621EE6BAD50081586F /* Frameworks */,
+				95E306631EE6BAD50081586F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95E3066B1EE6BAD50081586F /* PBXTargetDependency */,
+			);
+			name = "ParseStarterProject-SwiftUITests";
+			productName = "ParseStarterProject-SwiftUITests";
+			productReference = 95E306651EE6BAD50081586F /* ParseStarterProject-SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		95ED35FA1EE22410003C0F6C /* ParseStarterProject-SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95ED36041EE22410003C0F6C /* Build configuration list for PBXNativeTarget "ParseStarterProject-SwiftTests" */;
+			buildPhases = (
+				95ED35F71EE22410003C0F6C /* Sources */,
+				95ED35F81EE22410003C0F6C /* Frameworks */,
+				95ED35F91EE22410003C0F6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95ED36011EE22410003C0F6C /* PBXTargetDependency */,
+			);
+			name = "ParseStarterProject-SwiftTests";
+			productName = "ParseStarterProject-SwiftTests";
+			productReference = 95ED35FB1EE22410003C0F6C /* ParseStarterProject-SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		81BA813D1A49DA1800E65899 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Parse;
 				TargetAttributes = {
@@ -273,6 +370,16 @@
 								enabled = 1;
 							};
 						};
+					};
+					95E306641EE6BAD50081586F = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 81BA81441A49DA1800E65899;
+					};
+					95ED35FA1EE22410003C0F6C = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 81BA81441A49DA1800E65899;
 					};
 				};
 			};
@@ -290,6 +397,8 @@
 			projectRoot = "";
 			targets = (
 				81BA81441A49DA1800E65899 /* ParseStarterProject-Swift */,
+				95ED35FA1EE22410003C0F6C /* ParseStarterProject-SwiftTests */,
+				95E306641EE6BAD50081586F /* ParseStarterProject-SwiftUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -314,6 +423,20 @@
 				9548CDB11ED32E2100D0BB68 /* download.jpeg in Resources */,
 				9548CDA91ED2D4C200D0BB68 /* Money-55.png in Resources */,
 				957826671ED2C04C0023F574 /* User-35.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95E306631EE6BAD50081586F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95ED35F91EE22410003C0F6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +509,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		95E306611EE6BAD50081586F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95E306681EE6BAD50081586F /* ParseStarterProject_SwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95ED35F71EE22410003C0F6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95ED35FE1EE22410003C0F6C /* ParseStarterProject_SwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		95E3066B1EE6BAD50081586F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81BA81441A49DA1800E65899 /* ParseStarterProject-Swift */;
+			targetProxy = 95E3066A1EE6BAD50081586F /* PBXContainerItemProxy */;
+		};
+		95ED36011EE22410003C0F6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81BA81441A49DA1800E65899 /* ParseStarterProject-Swift */;
+			targetProxy = 95ED36001EE22410003C0F6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		814C3AC61B69877600E307BB /* Main.storyboard */ = {
@@ -534,6 +686,90 @@
 			};
 			name = Release;
 		};
+		95E3066C1EE6BAD50081586F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "ParseStarterProject-SwiftUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-7335453.ParseStarterProject-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "ParseStarterProject-Swift";
+			};
+			name = Debug;
+		};
+		95E3066D1EE6BAD50081586F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = "ParseStarterProject-SwiftUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-7335453.ParseStarterProject-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "ParseStarterProject-Swift";
+			};
+			name = Release;
+		};
+		95ED36021EE22410003C0F6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "ParseStarterProject-SwiftTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-7335453.ParseStarterProject-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParseStarterProject-Swift.app/ParseStarterProject-Swift";
+			};
+			name = Debug;
+		};
+		95ED36031EE22410003C0F6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = "ParseStarterProject-SwiftTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-7335453.ParseStarterProject-SwiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParseStarterProject-Swift.app/ParseStarterProject-Swift";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -551,6 +787,23 @@
 			buildConfigurations = (
 				81BA81651A49DA1800E65899 /* Debug */,
 				81BA81661A49DA1800E65899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95E3066E1EE6BAD50081586F /* Build configuration list for PBXNativeTarget "ParseStarterProject-SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95E3066C1EE6BAD50081586F /* Debug */,
+				95E3066D1EE6BAD50081586F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		95ED36041EE22410003C0F6C /* Build configuration list for PBXNativeTarget "ParseStarterProject-SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95ED36021EE22410003C0F6C /* Debug */,
+				95ED36031EE22410003C0F6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
