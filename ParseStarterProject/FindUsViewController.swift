@@ -22,7 +22,6 @@ class FindUsViewController: UIViewController,MKMapViewDelegate,CLLocationManager
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        // Do any additional setup after loading the view.
         
         
         locationManager.delegate = self
@@ -36,6 +35,7 @@ class FindUsViewController: UIViewController,MKMapViewDelegate,CLLocationManager
 
     }
     
+    //displays the map and also the hardcoded position of the three Libraries
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = manager.location?.coordinate{
@@ -79,18 +79,7 @@ class FindUsViewController: UIViewController,MKMapViewDelegate,CLLocationManager
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

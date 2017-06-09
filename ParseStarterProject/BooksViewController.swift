@@ -15,10 +15,9 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
     
     @IBOutlet var searchBar: UISearchBar!
     
-    //var requestBooks = [String]()
     var bookObjects = [PFObject]()
     
-    //var filteredBooks = [PFObject]()
+
     var searchActive:Bool = false
     
     
@@ -26,14 +25,9 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
         super.viewDidLoad()
         searchBar.delegate = self
         search()
-        //getBooks()
         
         self.hideKeyboardWhenTappedAround()
-        
-        
-        
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,18 +82,6 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
 
     
     func getBooks(){
@@ -149,7 +131,6 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
                 
                 if let row = tableView.indexPathForSelectedRow?.row{
                     
-                    //destination.Booktitle = requestBooks[row]
                     
                     destination.item = bookObjects[row]
                     destination.navigationItem.title = "Book Details"
@@ -164,13 +145,13 @@ class BooksViewController: UITableViewController,UISearchBarDelegate{
 
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+
         return 1
     }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+
         return bookObjects.count
     }
 

@@ -35,6 +35,10 @@ class BookDetailsViewController: UIViewController,CLLocationManagerDelegate {
     var caulfield = CLLocation(latitude:-37.8770 , longitude:145.0443)
     var clayton = CLLocation(latitude: -37.9150 , longitude:145.1300)
     var peninsula = CLLocation(latitude:-38.1536 , longitude:145.1344)
+    var userCurrentLocation = CLLocation()
+    
+    var pickupLocation = CLLocation()
+    
     var locationManager:CLLocationManager!
     //var userLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     //var userLocation:CLLocation = CLLocation()
@@ -111,15 +115,21 @@ class BookDetailsViewController: UIViewController,CLLocationManagerDelegate {
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0] as CLLocation
+         userCurrentLocation = locations[0] as CLLocation
         
+         //userCurrentLocation = manager.location!.coordinate
         // Call stopUpdatingLocation() to stop listening for location updates,
         // other wise this function will be called every time when user location changes.
         
         // manager.stopUpdatingLocation()
         
-        print("user latitude = \(userLocation.coordinate.latitude)")
-        print("user longitude = \(userLocation.coordinate.longitude)")
+//        print("user latitude = \(userCurrentLocation.coordinate.latitude)")
+//        print("user longitude = \(userCurrentLocation.coordinate.longitude)")
+        
+        
+        pickupLocation = userCurrentLocation
+        print(pickupLocation)
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
@@ -130,15 +140,60 @@ class BookDetailsViewController: UIViewController,CLLocationManagerDelegate {
     func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
         return CGRect(x: x, y: y, width: width, height: height)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleTextField.text = item?["Title"] as! String
+        ISBNTextField.text = item?["ISBN"] as! String
+        authorTextField.text = item?["Author"] as! String
+        genreTextField.text = item?["Genre"] as! String
+        locationTextField.text = item?["Location"] as! String
+        var image = item?["Image"] as? PFFile
+        image?.getDataInBackground(block: { (result, error) in
+            self.imageView.image = UIImage(data: result!)
+        })
+        
         
         determineMyCurrentLocation()
         self.hideKeyboardWhenTappedAround()
         
         
+        
+        UberRides()
+      
+        
+    }
+    
+    // Using uber rides api to redirect the user to the uber app. Uber app must be installed
+    func UberRides(){
+        
         let pickupLocation = CLLocation(latitude: 37.775159, longitude: -122.417907)
-        let dropoffLocation = CLLocation(latitude: 37.6213129, longitude: -122.3789554)
+        
+        //getting the current users location for pickup
+        //let pickupLocation = CLLocation(latitude:userCurrentLocation.latitude , longitude: userCurrentLocation.longitude)
+        
+        print("user latitude = \(userCurrentLocation.coordinate.latitude)")
+        print("user longitude = \(userCurrentLocation.coordinate.longitude)")
+        
+        //let pickupLocation = userCurrentLocation
+        //pickupLocation = userCurrentLocation
+        print(pickupLocation)
+        
+        var dropoffLocation:CLLocation = CLLocation()
+        if (locationTextField.text?.hasPrefix("Pen"))!{
+            dropoffLocation = peninsula
+        }
+        print(locationTextField.text!)
+        if (locationTextField.text?.hasPrefix("Cau"))!{
+            dropoffLocation = caulfield
+        }
+        if (locationTextField.text?.hasPrefix("Cla"))!{
+            dropoffLocation = clayton
+        }
+        
+        //let dropoffLocation = CLLocation(latitude: 37.6213129, longitude: -122.3789554)
         let builder = RideParametersBuilder().setPickupLocation(pickupLocation).setDropoffLocation(dropoffLocation,nickname:"Library")
         ridesClient.fetchCheapestProduct(pickupLocation: pickupLocation, completion: {
             product, response in
@@ -151,34 +206,14 @@ class BookDetailsViewController: UIViewController,CLLocationManagerDelegate {
             }
         })
         
-
+        
         button.center = view.center
         
-        //button.frame.size = CGSize(width:270,height:50)
         button.frame = CGRectMake(55, 570, 270, 40)
         
         view.addSubview(button)
+
         
-        // Do any additional setup after loading the view.
-        
-        //titleTextField.text = Booktitle
-        
-//        if let topItem = self.navigationController?.navigationBar.topItem{
-//            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-//        }
-        
-        
-        titleTextField.text = item?["Title"] as! String
-        ISBNTextField.text = item?["ISBN"] as! String
-        authorTextField.text = item?["Author"] as! String
-        genreTextField.text = item?["Genre"] as! String
-        locationTextField.text = item?["Location"] as! String
-        var image = item?["Image"] as? PFFile
-        image?.getDataInBackground(block: { (result, error) in
-            self.imageView.image = UIImage(data: result!)
-        })
-        
-      
         
     }
     
@@ -189,14 +224,5 @@ class BookDetailsViewController: UIViewController,CLLocationManagerDelegate {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

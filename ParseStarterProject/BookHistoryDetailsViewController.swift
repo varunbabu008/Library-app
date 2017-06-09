@@ -30,6 +30,7 @@ class BookHistoryDetailsViewController: UIViewController {
         getDates()
     }
     
+    //gets the borrowed and due dates of the borrowed book for the logged in user
     func getDates(){
         
         let query = PFQuery(className: "Borrowers")

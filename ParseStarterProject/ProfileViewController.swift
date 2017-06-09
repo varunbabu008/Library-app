@@ -25,34 +25,29 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        // Do any additional setup after loading the view.
         
         usernameLabel.text = PFUser.current()?.username
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func displayAlert(title: String, message: String){
         
         let alertcontroller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
+        // if the user presses ok. Perform Logout Logic
         alertcontroller.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
-            //login unsuccesful if the message us not "Login Successful"
+            
             if(message == "Logout"){
                 PFUser.logOut()
                 self.performSegue(withIdentifier: "loginPage", sender: self)
                 
             }
-     
             
         }))
-        
+        //Do nothing if the user cancels
         alertcontroller.addAction(UIAlertAction(title: "Cancel", style: .default, handler: {_ in
-            //login unsuccesful if the message us not "Login Successful"
-                        
             
         }))
         
@@ -62,16 +57,5 @@ class ProfileViewController: UIViewController {
         
     }
 
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

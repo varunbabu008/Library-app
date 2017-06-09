@@ -32,6 +32,7 @@
 		9548CDB71ED3373B00D0BB68 /* back4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9548CDB61ED3373B00D0BB68 /* back4.jpeg */; };
 		9548CDB91ED339E100D0BB68 /* backbook.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9548CDB81ED339E100D0BB68 /* backbook.jpg */; };
 		9548CDBB1ED33DC200D0BB68 /* payment.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9548CDBA1ED33DC200D0BB68 /* payment.jpeg */; };
+		954D10BA1EE9636B00B2E907 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D10B91EE9636B00B2E907 /* AboutViewController.swift */; };
 		9568671A1EB89B7000DC28DD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956867181EB89B7000DC28DD /* FBSDKCoreKit.framework */; };
 		9568671B1EB89B7000DC28DD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956867191EB89B7000DC28DD /* FBSDKLoginKit.framework */; };
 		957826631ED2BC750023F574 /* facebookLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 957826621ED2BC750023F574 /* facebookLogin.png */; };
@@ -96,6 +97,7 @@
 		9548CDB61ED3373B00D0BB68 /* back4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back4.jpeg; sourceTree = "<group>"; };
 		9548CDB81ED339E100D0BB68 /* backbook.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backbook.jpg; sourceTree = "<group>"; };
 		9548CDBA1ED33DC200D0BB68 /* payment.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = payment.jpeg; sourceTree = "<group>"; };
+		954D10B91EE9636B00B2E907 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		956867181EB89B7000DC28DD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../../FacebookSDKs-iOS-4/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		956867191EB89B7000DC28DD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../../FacebookSDKs-iOS-4/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		9568671C1EB89D6800DC28DD /* ParseStarterProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ParseStarterProject-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				9509AFD41ED15891000AD3AC /* BookHistoryDetailsViewController.swift */,
 				9548CDAA1ED2EDA100D0BB68 /* MyTabBarController.swift */,
 				9548CDAC1ED2F0C800D0BB68 /* TabBarAnimation.swift */,
+				954D10B91EE9636B00B2E907 /* AboutViewController.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				9509AFD51ED15891000AD3AC /* BookHistoryDetailsViewController.swift in Sources */,
 				95CA9F911EBAEA1400F0F98E /* BookDetailsViewController.swift in Sources */,
 				95CA9F8F1EBABE8D00F0F98E /* BooksViewController.swift in Sources */,
+				954D10BA1EE9636B00B2E907 /* AboutViewController.swift in Sources */,
 				9501C9EC1EBF5F2D00B5A7F6 /* HistoryViewController.swift in Sources */,
 				9501C9E81EBDD53B00B5A7F6 /* FindUsViewController.swift in Sources */,
 				95F5438E1EC3EFD400C1D131 /* PaymentsViewController.swift in Sources */,
@@ -798,6 +802,7 @@
 				95E3066D1EE6BAD50081586F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95ED36041EE22410003C0F6C /* Build configuration list for PBXNativeTarget "ParseStarterProject-SwiftTests" */ = {
 			isa = XCConfigurationList;

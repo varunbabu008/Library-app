@@ -104,8 +104,8 @@ class PaymentsViewController: UIViewController {
         }
     }
         
-        
-        
+ 
+        //Payment Details Error handling
         func handleError(error: NSError) {
             UIAlertView(title: "Please Try Again",
                         message: error.localizedDescription,
@@ -125,6 +125,7 @@ class PaymentsViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         let DateNow = formatter.string(from: date)
+        //getting the borrowed books for the logged in user
         let query = PFQuery(className: "Borrowers")
         query.whereKey("Username", equalTo: PFUser.current()!.username)
         query.findObjectsInBackground { (results, error) in
@@ -137,6 +138,7 @@ class PaymentsViewController: UIViewController {
                         
                         let borrowD = formatter.string(from:borrowedDate)
                         print(borrowD)
+                        // Date 14 Days from now - Due Date
                         var FourteenDaysfromNow: Date {
                             return (Calendar.current as NSCalendar).date(byAdding: .day, value: 14, to: Date(), options: [])!
                         }
@@ -144,6 +146,7 @@ class PaymentsViewController: UIViewController {
                         
                         print(dueD)
                         
+                        // getting the no of days by which the the book is due
                         let days: Int = self.calculateDaysBetweenTwoDates(start: borrowedDate, end: date)
                         print(days)
                         if(days > 14){

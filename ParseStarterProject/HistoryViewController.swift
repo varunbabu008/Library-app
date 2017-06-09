@@ -17,18 +17,17 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     @IBOutlet var tableView: UITableView!
     var bookObjects = [PFObject]()
     var  bookISBNObjects = [String](){
-    
+        // using didSet because asynchronous query
         didSet{
             
             let query1 = PFQuery(className: "Books")
             query1.whereKey("ISBN", containedIn: bookISBNObjects)
             
-            //query1.whereKey("ISBN", equalTo: "1002")
             query1.findObjectsInBackground(block: { (objects, error) in
                 
                 if let books = objects{
                     
-                    //self.requestBooks.removeAll()
+                   
                     self.bookObjects.removeAll()
                     
                     for book in books{
@@ -55,22 +54,18 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-//        EZLoadingActivity.showWithDelay("Loading...", disableUI: false, seconds: 0.5)
-//        getBorrowedISBN()
-        
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         EZLoadingActivity.showWithDelay("Loading...", disableUI: false, seconds: 0.5)
+        // shows history of previous books
         getBorrowedISBN()
 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -92,31 +87,23 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 }
             }
         }
-        
-        //print(bookISBNObjects)
-//        for element in self.bookISBNObjects {
-//            print( "1" + element) // output 1 2 3 4 5
-//        }
-        
        
     }
     
     
     
    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         return bookObjects.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        //cell.textLabel?.text = bookObjects[indexPath.row]
         
         
         cell.textLabel?.text = bookObjects[indexPath.row]["Title"] as? String
@@ -153,16 +140,5 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
     }
 
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
